@@ -1,0 +1,29 @@
+{
+  "header": {
+    "aboutUs": "О нас",
+    "recipes": "Рецeпты",
+    "catalog": "Каталог",
+    "news": "Новости",
+    "contacts": "Контакты",
+    "search": "Поиск",
+    "contact": "Связаться",
+    "main": "Главная"
+  },
+  "aboutUs": {
+    "moreButton": "Показать еще",
+    "news": "Новости",
+    "whoAreWe" : "Кто мы?",
+    "accordion": "Часто задаваемые вопросы"
+  },
+  "footer": {
+    "address": "Адрес",
+    "contacts" : "Телефон",
+    "socialMedia" : "Мы в соц. сетях"
+  },
+  "catalog": {
+    "catalog": "Каталог",
+    "som": "сом",
+    "gram": "г",
+    "order": "Заказать"
+  }
+}

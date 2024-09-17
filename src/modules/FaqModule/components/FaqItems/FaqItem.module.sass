@@ -1,0 +1,81 @@
+.nameFaq
+    margin-bottom: 48px
+    margin-top: 40px
+.accordion
+    border-radius: 8px
+    width: 100%
+.accordion_item
+    width: 100%
+    margin-bottom: 8px
+    border-radius: 8px
+    border: 2px solid var(--green)
+
+    .accordion_header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-left: 2px solid transparent
+        width: 100%
+        padding: 16px
+        background-color: #ffffff
+        border-radius: 8px
+        font-size: 18px
+        font-weight: 600
+        text-align: left
+        cursor: pointer
+        opacity: 1
+        transition: border-left 0.5s, opacity 0.5s
+
+        .textFaq
+            display: -webkit-box
+            -webkit-line-clamp: 1
+            -webkit-box-orient: vertical
+            overflow: hidden
+            width: auto
+
+            &.fullText
+                -webkit-line-clamp: unset
+                max-height: 1000px
+
+        &:hover
+            //background-color: var(--grey200)
+            transition: 0.3s ease
+
+        &.opena
+            background-color: #ffffff
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0
+            opacity: 2
+            border-top: 2px solid var(--green)
+            border-left: 2px solid var(--green)
+            border-right: 2px solid var(--green)
+
+    .accordion_collapse
+        max-height: 0
+        overflow: hidden
+        border-left: 2px solid transparent
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out
+        opacity: 0
+
+        &.open
+            opacity: 1
+            max-height: 1000px
+            border-bottom: 2px solid var(--green)
+            border-left: 2px solid var(--green)
+            border-right: 2px solid var(--green)
+            border-bottom-left-radius: 8px
+            border-bottom-right-radius: 8px
+
+    .accordion_body
+        width: 100%
+        padding: 16px
+        background-color: #ffffff
+        border-bottom-left-radius: 8px
+        border-bottom-right-radius: 8px
+        font-size: 18px
+        color: var(--grey400)
+@media (max-width: 1280px)
+    .accordion_item
+        width: 100%
+    .accordion
+        width: 100%

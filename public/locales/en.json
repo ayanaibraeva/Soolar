@@ -1,0 +1,29 @@
+{
+  "header": {
+    "aboutUs": "About us",
+    "recipes": "Recipes",
+    "catalog": "Catalog",
+    "news": "News",
+    "contacts": "Contacts",
+    "search": "Search",
+    "contact": "Contact",
+    "main": "Main"
+  },
+  "aboutUs": {
+    "moreButton": "Show more",
+    "news": "News",
+    "whoAreWe" : "Who are we?",
+    "accordion": "Frequently asked questions"
+  },
+  "footer": {
+    "address": "Address",
+    "contacts" : "Contacts",
+    "socialMedia" : "Our social networks"
+  },
+  "catalog": {
+    "catalog": "Catalog",
+    "som": "som",
+    "gram": "g",
+    "order": "Order"
+  }
+}

@@ -1,0 +1,49 @@
+.mobileMenu
+  position: fixed
+  top: 0
+  left: 0
+  width: 270px
+  height: 476px
+  background-color: var(--main)
+  padding-left: 25px
+  display: none
+  flex-direction: column
+  z-index: 999
+  transform: translateX(-100%)
+  transition: opacity 0.3s ease, transform 0.3s ease
+
+  &.open
+    display: flex
+    transform: translateX(0)
+
+.mobileMenuHeader
+  width: 100%
+  display: flex
+  justify-content: flex-end
+
+.burgerClose
+  font-size: 20px
+  background: none
+  border: none
+  cursor: pointer
+  margin: 10px
+
+.mobileNavbar
+  margin-top: 33px
+  list-style: none
+  padding: 0
+  display: flex
+  flex-direction: column
+  gap: 28px
+
+.headerButton
+  margin-top: 35px
+  background-color: var(--main)
+  border-radius: 16px
+  display: flex
+  padding: 10px 36px
+  color: white
+  width: 150px
+
+  @media (max-width: 420px)
+    background-color: var(--green)

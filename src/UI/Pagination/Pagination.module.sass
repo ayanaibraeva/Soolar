@@ -1,0 +1,60 @@
+.mainBlock
+  display: flex
+  justify-content: center
+  margin: 32px 0 80px
+
+  ul
+    display: flex
+    gap: 8px
+    padding: 8px
+    justify-content: center
+    align-items: center
+    border-radius: 7px
+    background: #ffffff
+    width: fit-content
+
+  .pageItem
+    .pageLink
+      display: flex
+      width: 36px
+      height: 36px
+      align-items: center
+      justify-content: center
+      background: white
+      color: var(--black)
+      border: none
+      border-radius: 7px
+      cursor: pointer
+
+    &.active
+      .pageLink
+        background: var(--green)
+
+        .number
+          color: white
+
+    .pageMiddle
+      display: flex
+      align-items: center
+      padding-bottom: 6px
+
+  li
+    .prev,
+    .next
+      display: flex
+      width: 36px
+      height: 36px
+      align-items: center
+      justify-content: center
+      background: var(--main)
+      border: none
+      border-radius: 7px
+      cursor: pointer
+      transition: background 0.3s
+
+      &:hover
+        background: var(--grey100)
+
+      &.disabled
+        cursor: default
+        background: var(--main)
