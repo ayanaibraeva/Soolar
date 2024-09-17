@@ -8,9 +8,11 @@ import { Pagination } from "../../UI/Pagination/Pagination.jsx";
 import { useState, useEffect } from 'react';
 import {Breadcrumbs} from "../../UI/breadcrumbs/Breadcrumbs.jsx";
 import {PATH} from "../../utils/lib/variables.js";
+import {useTranslation} from "react-i18next";
 
 export const CatalogDetail = () => {
     const categoryData = useLoaderData();
+    const { t } = useTranslation();
     const [searchParams, setSearchParams] = useSearchParams();
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -30,7 +32,7 @@ export const CatalogDetail = () => {
     return (
         <MultiContainer>
             <div>
-                <Breadcrumbs currentPage="Каталог" parentPageLink={PATH.catalog} currentPageId={categoryData?.results?.name}/>
+                <Breadcrumbs currentPage={t("header.catalog")} parentPageLink={PATH.catalog} currentPageId={categoryData?.results?.name}/>
                 <Typography className={classes.title} variant="h3">
                     {categoryData?.results?.name}
                 </Typography>
