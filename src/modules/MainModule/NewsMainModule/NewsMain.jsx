@@ -14,7 +14,7 @@ export const NewsMain = () => {
     const {t} = useTranslation();
 
     useEffect(() => {
-        setNews(newsPage.results.slice(0, 4));
+        setNews(newsPage?.results?.slice(0, 4));
     }, [newsPage]);
 
     const handleCardClick = () => {
