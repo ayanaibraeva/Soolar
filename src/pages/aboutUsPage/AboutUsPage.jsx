@@ -11,8 +11,8 @@ export const AboutUsPage = () => {
         <>
             <BannerModule />
             <AboutUsModule />
-            {/*<HitProducts/>*/}
-            {/*<HazelnutModule />*/}
+            <HitProducts/>
+            <HazelnutModule />
             <NewsMain />
             <Faq/>
         </>

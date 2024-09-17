@@ -1,9 +1,9 @@
+import classes from "./HitProducts.module.sass";
+
 import { MultiContainer } from "../../../../UI/container/MultiContainer.jsx";
 import { useLoaderData } from "react-router-dom";
 import Slider from "../Slide/Slide.jsx";
 import {Typography} from "../../../../UI/Typography/Typography.jsx";
-
-import classes from "./HitProducts.module.sass"
 
 export const HitProducts = () => {
     const { hitProducts } = useLoaderData();
@@ -12,7 +12,8 @@ export const HitProducts = () => {
 
     const hitOfSalesInfo = hitOfSalesProducts.map(product => ({
         name: product.name,
-        image: product.image
+        image: product.image,
+        description: product.description
     }));
 
     return (

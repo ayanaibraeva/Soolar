@@ -11,7 +11,7 @@ export const CustomMoreButton = ({onClick}) => {
         <div className={classes.more}>
             <button className={classes.button} onClick={onClick}>
                 {t("aboutUs.moreButton")}
-                <ArrowRightMoreIcon height="22x" color="#4DB45E" width="22px"/>
+                <ArrowRightMoreIcon height="22px" color="#4DB45E" width="22px"/>
             </button>
         </div>
     )

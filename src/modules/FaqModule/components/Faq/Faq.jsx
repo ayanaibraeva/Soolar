@@ -1,7 +1,8 @@
+import classes from "./Faq.module.sass";
+
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLoaderData } from "react-router-dom";
-import classes from "./Faq.module.sass";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { FaqItems } from "../FaqItems/FaqItems.jsx";
 import {MultiContainer} from "../../../../UI/container/MultiContainer.jsx";
@@ -32,7 +33,7 @@ export const Faq = () => {
         <section>
             <MultiContainer>
                 <Typography className={classes.title} variant="h2" color="blue500">
-                    Часто задаваемые вопросы
+                    {t("aboutUs.accordion")}
                 </Typography>
             <ul ref={accordionRef} className={classes.accordion}>
                 {faqs?.map((faqItem, id) => (

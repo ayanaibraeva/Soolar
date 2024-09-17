@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import styles from './Slide.module.sass';
+import classes from './Slide.module.sass';
 
-const Slide = ({ image, name }) => (
-    <div className={styles.slideContent}>
-        <img src={image} alt={name} className={styles.slideImage} />
-        <div className={styles.slideText}>
-            <h3>{name}</h3>
+import  { useState } from 'react';
+import {Typography} from "../../../../UI/Typography/Typography.jsx";
+
+const Slide = ({ image, name, description }) => (
+    <div className={classes.slideContent}>
+        <div className={classes.slideImage}>
+            <img src={image} alt={name}/>
+        </div>
+        <div className={classes.slideText}>
+            <Typography  variant="h3">{name}</Typography>
+            <Typography className={classes.slideTextTitle} variant="bodyL">{description}</Typography>
         </div>
     </div>
 );
@@ -26,26 +31,26 @@ const Slider = ({ slides }) => {
     const showNextButton = currentIndex < totalSlides - 1;
 
     return (
-        <div className={styles.sliderContainer}>
+        <div className={classes.sliderContainer}>
             {showPrevButton && (
-                <button className={styles.sliderButtonPrev} onClick={handlePrev}>
+                <button className={classes.sliderButtonPrev} onClick={handlePrev}>
                     ‹
                 </button>
             )}
-            <div className={styles.sliderWrapper}>
+            <div className={classes.sliderWrapper}>
                 <Slide {...slides[currentIndex]} />
             </div>
             {showNextButton && (
-                <button className={styles.sliderButtonNext} onClick={handleNext}>
+                <button className={classes.sliderButtonNext} onClick={handleNext}>
                     ›
                 </button>
             )}
 
-            <div className={styles.indicatorContainer}>
+            <div className={classes.indicatorContainer}>
                 {slides.map((_, index) => (
                     <div
                         key={index}
-                        className={`${styles.indicator} ${index === currentIndex ? styles.activeIndicator : ''}`}
+                        className={`${classes.indicator} ${index === currentIndex ? classes.activeIndicator : ''}`}
                         onClick={() => setCurrentIndex(index)}
                     />
                 ))}

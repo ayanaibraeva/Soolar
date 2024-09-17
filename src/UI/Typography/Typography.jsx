@@ -8,7 +8,7 @@ export const Typography = (props) => {
         className,
         children,
         id,
-        onClick, // Добавляем onClick
+        onClick,
     } = props;
 
     const Tags = {

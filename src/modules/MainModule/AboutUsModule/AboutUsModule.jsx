@@ -1,6 +1,5 @@
 import classes from "./AboutUs.module.sass";
 
-import WhoWeAre from "../../../../src/assets/Image/WhoWeAre.webp";
 import {Typography} from "../../../UI/Typography/Typography.jsx";
 import {MultiContainer} from "../../../UI/container/MultiContainer.jsx";
 import {useLoaderData} from "react-router-dom";
@@ -23,8 +22,7 @@ export const AboutUsModule = () => {
                     </Typography>
                 </div>
                 <div className={classes.image}>
-                    <img src={WhoWeAre} alt="About Us"/>
-                    {/*<img src={aboutUs.image} alt="About Us"/>*/}
+                    <img src={aboutUs.image} alt=""/>
                 </div>
             </div>
         </MultiContainer>

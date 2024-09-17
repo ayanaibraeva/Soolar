@@ -53,8 +53,8 @@
     height: 501px
     border: 25px solid var(--main)
 
-  .nutCard img
-    transform: rotate(calc(var(--angle) * 360deg / var(--total) - var(--rotation)deg)) translateX(-200px) rotate(calc(-var(--angle) * 360deg / var(--total) - var(--rotation)deg))
+  //.nutCard img
+    //transform: rotate(calc(var(--angle) * 360deg / var(--total) - var(--rotation)deg)) translateX(-200px) rotate(calc(-var(--angle) * 360deg / var(--total) - var(--rotation)deg))
 
   .img
     width: var(--img-width)
@@ -68,6 +68,8 @@
   transition: all 1.5s ease
   @media (max-width: 420px)
     margin-top: 600px
+  &Text
+    margin-top: 24px
 
 .recipeBtn
   margin-top: 25px

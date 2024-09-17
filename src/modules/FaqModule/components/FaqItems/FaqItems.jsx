@@ -19,7 +19,7 @@ export const FaqItems = ({ faqItem, onClick, isOpen }) => {
     return (
         <li className={classes.accordion_item}>
             <button
-                className={`${classes.accordion_header} ${isOpen ? classes.opena : ""}`}
+                className={`${classes.accordion_header} ${isOpen ? classes.open : ""}`}
                 onClick={onClick}
             >
                 <Typography
