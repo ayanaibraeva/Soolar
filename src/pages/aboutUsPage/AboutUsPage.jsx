@@ -12,7 +12,7 @@ export const AboutUsPage = () => {
             <BannerModule />
             <AboutUsModule />
             <HitProducts/>
-            <HazelnutModule />
+            {/*<HazelnutModule />*/}
             <NewsMain />
             <Faq/>
         </>

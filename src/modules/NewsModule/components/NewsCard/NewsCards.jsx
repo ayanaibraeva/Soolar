@@ -10,13 +10,14 @@ import {Breadcrumbs} from "../../../../UI/breadcrumbs/Breadcrumbs.jsx";
 import {useTranslation} from "react-i18next";
 
 export const NewsCards = () => {
+    const {t} = useTranslation();
     const newsPage = useLoaderData();
     const [news, setNews] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchParams, setSearchParams] = useSearchParams();
     const [selectedNewsId, setSelectedNewsId] = useState(null);
-    const {t} = useTranslation();
+
 
     const handlePageChange = (page) => {
         setSearchParams({ page });
