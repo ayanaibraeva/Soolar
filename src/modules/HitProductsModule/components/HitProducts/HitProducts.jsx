@@ -7,12 +7,11 @@ import {Typography} from "../../../../UI/Typography/Typography.jsx";
 
 export const HitProducts = () => {
     const { hitProducts } = useLoaderData();
-
     const hitOfSalesProducts = hitProducts?.results.filter(product => product.hit_of_sales === true);
 
     const hitOfSalesInfo = hitOfSalesProducts.map(product => ({
         name: product.name,
-        image: product.image,
+        images: product.images,
         description: product.description
     }));
 
@@ -22,6 +21,7 @@ export const HitProducts = () => {
                 <Typography variant="h2" >Топовые продукты</Typography>
                 <Slider slides={hitOfSalesInfo} />
             </div>
+
         </MultiContainer>
     );
 };

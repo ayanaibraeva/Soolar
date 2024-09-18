@@ -61,9 +61,7 @@ export const Breadcrumbs = ({ currentPage, parentPageLink, currentPageId, classN
             </li>
         );
     }
-
     return <ul className={`${classes.breadcrumbList} ${className}`}>{crumbs}</ul>;
-
 };
 
 

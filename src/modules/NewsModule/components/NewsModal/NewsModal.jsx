@@ -37,7 +37,7 @@ export const NewsModal = ({ newsId, onClose }) => {
                     <CloseCircleIcon height="25px" width="25px" color="black" />
                 </div>
                 <div className={classes.modalImg}>
-                    <img src={newsDetails.image} alt={newsDetails.title} />
+                    <img src={newsDetails.images} alt={newsDetails.title} />
                 </div>
                 <Typography className={classes.modalTitle} variant="h4">
                     {newsDetails.title}

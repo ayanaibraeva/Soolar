@@ -3,10 +3,10 @@ import classes from './Slide.module.sass';
 import  { useState } from 'react';
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 
-const Slide = ({ image, name, description }) => (
+const Slide = ({ images, name, description }) => (
     <div className={classes.slideContent}>
         <div className={classes.slideImage}>
-            <img src={image} alt={name}/>
+            <img src={images} alt={name}/>
         </div>
         <div className={classes.slideText}>
             <Typography  variant="h3">{name}</Typography>
