@@ -1,24 +1,30 @@
 .aboutUs
   margin-top: 52px
+  align-items: center
   display: flex
-  gap: 10px
+  width: 100%
+  max-width: 1209px
   @media (max-width: 420px)
     flex-direction: column
-
+    margin-top: 39px
   &Title
     margin-bottom: 40px
+    @media (max-width: 420px)
+      margin-bottom: 20px
   &Content
-    margin-top: 15px
+    p
+      color: #000
+      font-family: Gilroy, "sans-serif"
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 24px
+    @media (max-width: 420px)
+      font-size: 0.9rem
+      word-wrap: break-word
 
 .image
-  width: 733px
-  height: 378px
-  @media (max-width: 420px)
-    width: 360px
-    height: 185px
   img
-    width: 733px
-    height: 378px
     @media (max-width: 420px)
       width: 360px
       height: 185px

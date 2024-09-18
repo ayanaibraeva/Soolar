@@ -12,11 +12,11 @@ const CatalogDetail = loadComponent(() => import ('../../pages/catalogDetail/Cat
 export const router = createBrowserRouter([
     {
         element:<Layout/>,
-        // loader: async () => {
-        //     const contacts = await requester(`contacts/`);
-        //     return contacts;
-        //
-        // },
+        loader: async () => {
+            const contacts = await requester(`contacts/`);
+            return contacts;
+
+        },
         children: [
             {
                 element: <AboutUsPage/>,

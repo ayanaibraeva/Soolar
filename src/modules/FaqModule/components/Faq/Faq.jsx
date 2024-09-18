@@ -35,16 +35,16 @@ export const Faq = () => {
                 <Typography className={classes.title} variant="h2" color="blue500">
                     {t("aboutUs.accordion")}
                 </Typography>
-            <ul ref={accordionRef} className={classes.accordion}>
-                {faqs?.map((faqItem, id) => (
-                    <FaqItems
-                        onClick={() => (id === openId ? setOpenId(null) : setOpenId(id))}
-                        faqItem={faqItem}
-                        isOpen={id === openId}
-                        key={faqItem.id}
-                    />
-                ))}
-            </ul>
+                <ul ref={accordionRef} className={classes.accordion}>
+                    {faqs?.map((faqItem, id) => (
+                        <FaqItems
+                            onClick={() => (id === openId ? setOpenId(null) : setOpenId(id))}
+                            faqItem={faqItem}
+                            isOpen={id === openId}
+                            key={faqItem.id}
+                        />
+                    ))}
+                </ul>
             </MultiContainer>
         </section>
     );

@@ -1,7 +1,7 @@
 import classes from './Slide.module.sass';
 
 import  { useState } from 'react';
-import {Typography} from "../../../../UI/Typography/Typography.jsx";
+import { Typography } from "../../../../UI/Typography/Typography.jsx";
 
 const Slide = ({ image, name, description }) => (
     <div className={classes.slideContent}>

@@ -23,7 +23,7 @@ export const Layout = () => {
                 <Outlet />
             </Suspense>
             <div ref={footerRef}>
-                {/*<Footer />*/}
+                <Footer />
             </div>
         </>
     );

@@ -4,7 +4,7 @@ import {Typography} from "../../../UI/Typography/Typography.jsx";
 import {MultiContainer} from "../../../UI/container/MultiContainer.jsx";
 import {useLoaderData} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-
+import parse from "html-react-parser";
 export const AboutUsModule = () => {
 
     const { aboutUs } = useLoaderData();
@@ -13,13 +13,13 @@ export const AboutUsModule = () => {
     return (
         <MultiContainer>
             <div className={classes.aboutUs}>
-                <div>
+                <div className={classes.aboutUsContent}>
                     <Typography variant="h2" className={classes.aboutUsTitle}>
                         {t("aboutUs.whoAreWe")}
                     </Typography>
-                    <Typography variant="body600">
-                        {aboutUs.text}
-                    </Typography>
+                    <div>
+                        {parse(aboutUs.text)}
+                    </div>
                 </div>
                 <div className={classes.image}>
                     <img src={aboutUs.image} alt=""/>
