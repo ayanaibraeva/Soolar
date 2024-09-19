@@ -1,36 +1,40 @@
 import classes from "./ProductCard.module.sass";
-
 import { useState } from "react";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { CartIcon } from "../../../../assets/Icons/CartIcon.jsx";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const ProductCard = ({ product }) => {
     const [selectedVolume, setSelectedVolume] = useState(product.prices[0]?.volume || '');
     const [quantity, setQuantity] = useState(1);
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const handleVolumeSelect = (volume) => {
         setSelectedVolume(volume);
-        setQuantity(1);
     };
 
     const handleQuantityChange = (type) => {
-        if (type === 'increase') {
-            setQuantity(prev => prev + 1);
-        } else if (type === 'decrease' && quantity > 1) {
-            setQuantity(prev => prev - 1);
-        }
+        setQuantity(prevQuantity => {
+            if (type === 'increase') {
+                return prevQuantity + 1;
+            } else if (type === 'decrease' && prevQuantity > 1) {
+                return prevQuantity - 1;
+            }
+            return prevQuantity;
+        });
     };
 
-    const selectedPrice = product.prices.find(priceItem => priceItem.volume === selectedVolume)?.price;
+    const selectedPriceItem = product.prices.find(priceItem => priceItem.volume === selectedVolume);
+    const selectedPrice = selectedPriceItem?.price;
     const totalPrice = selectedPrice * quantity;
 
     const handleSendToWhatsApp = () => {
-        const message = `Product: ${product.name}\nVolume: ${selectedVolume}\nPrice per unit: ${selectedPrice} сом\nQuantity: ${quantity}\nTotal Price: ${totalPrice} сом`;
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
-        window.open(whatsappUrl, '_blank');
+        // Use the `order_link` from the selected price item
+        if (selectedPriceItem?.order_link) {
+            window.open(selectedPriceItem.order_link, '_blank');
+        } else {
+            console.error("No order link available for the selected volume");
+        }
     };
 
     return (
@@ -46,7 +50,7 @@ const ProductCard = ({ product }) => {
                         className={`${classes.volumeSpan} ${selectedVolume === priceItem.volume ? classes.selected : ''}`}
                         onClick={() => handleVolumeSelect(priceItem.volume)}
                     >
-                       {priceItem.volume} {t("catalog.gram")}
+                        {priceItem.volume} {t("catalog.gram")}
                     </span>
                 ))}
             </div>
@@ -54,7 +58,7 @@ const ProductCard = ({ product }) => {
                 <span>{totalPrice} {t("catalog.som")}</span>
                 <div className={classes.quantityControl}>
                     <button onClick={() => handleQuantityChange('decrease')}>-</button>
-                        <span>{quantity}  </span>
+                    <span>{quantity}</span>
                     <button onClick={() => handleQuantityChange('increase')}>+</button>
                 </div>
             </div>

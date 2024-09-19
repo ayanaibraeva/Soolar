@@ -1,17 +1,17 @@
 import classes from "./CatalogPage.module.sass";
 
-import {useLoaderData, useNavigate} from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import ProductCard from "../../modules/CatalogModule/components/ProductCard/ProductCard.jsx";
-import {Typography} from "../../UI/Typography/Typography.jsx";
-import {MultiContainer} from "../../UI/container/MultiContainer.jsx";
-import {CustomMoreButton} from "../../UI/CustomMoreButton/CustomMoreButton.jsx";
-import {Breadcrumbs} from "../../UI/breadcrumbs/Breadcrumbs.jsx";
-import {useTranslation} from "react-i18next";
+import { Typography } from "../../UI/Typography/Typography.jsx";
+import { MultiContainer } from "../../UI/container/MultiContainer.jsx";
+import { CustomMoreButton } from "../../UI/CustomMoreButton/CustomMoreButton.jsx";
+import { Breadcrumbs } from "../../UI/breadcrumbs/Breadcrumbs.jsx";
+import { useTranslation } from "react-i18next";
 
 export const CatalogPage = () => {
     const category = useLoaderData();
     const navigate = useNavigate();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const handleMoreClick = (categoryId) => {
         navigate(`/catalogDetail/${categoryId}`);
@@ -20,7 +20,7 @@ export const CatalogPage = () => {
     return (
         <MultiContainer>
             <div>
-                <Breadcrumbs currentPage={t("catalog.catalog")}/>
+                <Breadcrumbs currentPage={t("catalog.catalog")} />
                 <Typography className={classes.pageTitle} variant="h3">{t("catalog.catalog")}</Typography>
                 {category.map((item) => (
                     <div key={item.id}>
@@ -33,9 +33,9 @@ export const CatalogPage = () => {
                                             <ProductCard key={product.id} product={product} />
                                         ))}
                                     </div>
-                                    <CustomMoreButton
-                                        onClick={() => handleMoreClick(item.id)}
-                                    />
+                                    {item.catalogs.length >= 8 && (
+                                        <CustomMoreButton onClick={() => handleMoreClick(item.id)} />
+                                    )}
                                 </div>
                             ) : (
                                 <p>Товары не найдены.</p>
