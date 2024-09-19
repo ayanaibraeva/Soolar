@@ -1,4 +1,5 @@
 import classes from "./ProductCard.module.sass";
+
 import { useState } from "react";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { CartIcon } from "../../../../assets/Icons/CartIcon.jsx";
@@ -29,7 +30,6 @@ const ProductCard = ({ product }) => {
     const totalPrice = selectedPrice * quantity;
 
     const handleSendToWhatsApp = () => {
-        // Use the `order_link` from the selected price item
         if (selectedPriceItem?.order_link) {
             window.open(selectedPriceItem.order_link, '_blank');
         } else {

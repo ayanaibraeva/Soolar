@@ -1,4 +1,5 @@
 import classes from './Slide.module.sass';
+
 import { useState, useEffect } from 'react';
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 
@@ -36,7 +37,6 @@ const Slide = ({ images, name, description }) => {
                 <Typography variant="h3">{name}</Typography>
                 <Typography className={classes.slideTextTitle} variant="bodyL">{description}</Typography>
             </div>
-            {/* Removed image indicator */}
         </div>
     );
 };
