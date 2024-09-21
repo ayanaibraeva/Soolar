@@ -26,5 +26,19 @@
     "som": "сом",
     "gram": "г",
     "order": "Заказать"
+  },
+  "noResults": {
+    "searchFor": "По запросу",
+    "nothingFound": "ничего не найдено"
+  },
+  "whatsapp": {
+    "message": "Здавствуйте! Прошу оформить заказ: ",
+    "product": "Продукт",
+    "volume": "Объем",
+    "pricePerUnit": "Цена за единицу",
+    "quantity": "Количество",
+    "totalPrice": "Общая стоимость",
+    "som": "сом",
+    "gram": "г"
   }
 }

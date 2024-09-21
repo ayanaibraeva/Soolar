@@ -25,17 +25,15 @@ const Slide = ({ images, name, description }) => {
     return (
         <div className={classes.slideContent}>
             <div className={classes.slideImage}>
-                <button className={classes.sliderButtonPrev} onClick={handlePrevImage}>
-                    ‹
-                </button>
-                <img src={images[currentImageIndex]} alt={name} />
-                <button className={classes.sliderButtonNext} onClick={handleNextImage}>
-                    ›
-                </button>
+                {totalImages > 0 ? (
+                    <img src={images[currentImageIndex]} alt={name} />
+                ) : (
+                    <div>No Images</div>
+                )}
             </div>
             <div className={classes.slideText}>
-                <Typography variant="h3">{name}</Typography>
-                <Typography className={classes.slideTextTitle} variant="bodyL">{description}</Typography>
+                <Typography variant="h4">{name}</Typography>
+                <Typography className={classes.slideTextTitle} variant="body600">{description}</Typography>
             </div>
         </div>
     );
@@ -46,11 +44,11 @@ const Slider = ({ slides }) => {
     const totalSlides = slides.length;
 
     const handlePrevSlide = () => {
-        setCurrentSlideIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : totalSlides - 1));
+        setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
     };
 
     const handleNextSlide = () => {
-        setCurrentSlideIndex((prevIndex) => (prevIndex < totalSlides - 1 ? prevIndex + 1 : 0));
+        setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
     };
 
     return (
@@ -59,7 +57,11 @@ const Slider = ({ slides }) => {
                 ‹
             </button>
             <div className={classes.sliderWrapper}>
-                <Slide {...slides[currentSlideIndex]} />
+                {totalSlides > 0 ? (
+                    <Slide {...slides[currentSlideIndex]} />
+                ) : (
+                    <div>No Slides Available</div>
+                )}
             </div>
             <button className={classes.sliderButtonNext} onClick={handleNextSlide}>
                 ›

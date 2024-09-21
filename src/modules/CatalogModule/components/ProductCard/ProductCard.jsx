@@ -1,5 +1,4 @@
 import classes from "./ProductCard.module.sass";
-
 import { useState } from "react";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { CartIcon } from "../../../../assets/Icons/CartIcon.jsx";
@@ -8,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const ProductCard = ({ product }) => {
     const [selectedVolume, setSelectedVolume] = useState(product.prices[0]?.volume || '');
     const [quantity, setQuantity] = useState(1);
-    const { t } = useTranslation();
+    const { t } = useTranslation();  // Move the hook to the component body
 
     const handleVolumeSelect = (volume) => {
         setSelectedVolume(volume);
@@ -29,11 +28,21 @@ const ProductCard = ({ product }) => {
     const selectedPrice = selectedPriceItem?.price;
     const totalPrice = selectedPrice * quantity;
 
+    // Pass the 't' function as part of the logic
     const handleSendToWhatsApp = () => {
         if (selectedPriceItem?.order_link) {
-            window.open(selectedPriceItem.order_link, '_blank');
+            const message = `${t("whatsapp.message")} ${t('whatsapp.product')}: ${product.name}, ` +
+                `${t('whatsapp.volume')}: ${selectedVolume} ${t("whatsapp.gram")}, ` +
+                `${t('whatsapp.pricePerUnit')}: ${selectedPrice} ${t("whatsapp.som")}, ` +
+                `${t('whatsapp.quantity')}: ${quantity}, ` +
+                `${t('whatsapp.totalPrice')}: ${totalPrice} ${t("whatsapp.som")}` ;
+
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `${selectedPriceItem.order_link}&text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
         } else {
-            console.error("No order link available for the selected volume");
+            console.error("No WhatsApp order link available");
         }
     };
 

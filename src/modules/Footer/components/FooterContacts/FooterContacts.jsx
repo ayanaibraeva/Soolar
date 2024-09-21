@@ -16,16 +16,16 @@ export const FooterContacts = () => {
     return (
         <div className={classes.social}>
            <div className={classes.socialContent}>
-               <Typography variant="body">{t("footer.address")}:</Typography>
+               <Typography variant="bodyL">{t("footer.address")}:</Typography>
                <Typography>{address}</Typography>
            </div>
             <div className={classes.socialContent}>
-                <Typography variant="body">{t("footer.contacts")}:</Typography>
+                <Typography variant="bodyL">{t("footer.contacts")}:</Typography>
                 <a className={classes.tel} href={`tel:${phone1}`}>{phone1}</a>
                 {/*<a className={classes.tel} href={`tel:${phone2}`}>{phone2}</a>*/}
             </div>
             <div className={classes.socialContent}>
-                <Typography variant="body">{t("footer.socialMedia")}:</Typography>
+                <Typography variant="bodyL">{t("footer.socialMedia")}:</Typography>
                 {[{ link: instagram, Icon: InstagramIcon }, { link: facebook, Icon: FacebookIcon }, { link: telegram, Icon: TelegramIcon }, { link: whatsapp, Icon: WhatsAppIcon }]
                     .map(({ link, Icon }, index) => (
                         <Link key={index} to={link} target="_blank">

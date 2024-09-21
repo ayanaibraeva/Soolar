@@ -1,6 +1,7 @@
-import { useRef } from "react";
 import classes from "./HeaderMobile.module.sass";
-import { Link } from "react-router-dom";
+
+import { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchInput } from "../SearchInput/SearchInput.jsx";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { useTranslation } from "react-i18next";
@@ -8,12 +9,17 @@ import { useOutsideClick } from "../../../../utils/hooks/useOutsideClick.js";
 
 export const HeaderMobile = ({ navbarItems, searchText, setSearchText, menuOpen, toggleMenu }) => {
     const { t } = useTranslation();
-    const menuRef = useRef(null);  // Create a ref for the mobile menu
-
+    const menuRef = useRef(null);
+    const navigate = useNavigate();
 
     useOutsideClick(menuRef, () => {
         if (menuOpen) toggleMenu();
     });
+
+    const handleNavigation = (path) => {
+        navigate(path);
+        toggleMenu();
+    };
 
     return (
         <div ref={menuRef} className={`${classes.mobileMenu} ${menuOpen ? classes.open : ""}`}>
@@ -22,18 +28,23 @@ export const HeaderMobile = ({ navbarItems, searchText, setSearchText, menuOpen,
                     &#x2715;
                 </button>
             </div>
-            <SearchInput value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+            <div className={classes.searchInput}>
+                <SearchInput value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+            </div>
             <ul className={classes.mobileNavbar}>
                 {navbarItems.map((item) => (
                     <li key={item.id}>
                         {item.action ? (
-                            <div onClick={item.action} className={classes.navItem}>
+                            <div onClick={() => { item.action(); toggleMenu(); }} className={classes.navItem}>
                                 <Typography variant="body" color="black">
                                     {item.title}
                                 </Typography>
                             </div>
                         ) : (
-                            <Link to={item.caption}>
+                            <Link
+                                to={item.caption}
+                                onClick={() => handleNavigation(item.caption)} // Call handleNavigation
+                            >
                                 <Typography variant="body" color="black">
                                     {item.title}
                                 </Typography>

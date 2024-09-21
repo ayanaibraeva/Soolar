@@ -21,7 +21,6 @@ export const HitProducts = () => {
                 <Typography variant="h2" >Топовые продукты</Typography>
                 <Slider slides={hitOfSalesInfo} />
             </div>
-
         </MultiContainer>
     );
 };

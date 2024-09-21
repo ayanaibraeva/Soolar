@@ -17,7 +17,7 @@ export const AboutUsModule = () => {
                     <Typography variant="h2" className={classes.aboutUsTitle}>
                         {t("aboutUs.whoAreWe")}
                     </Typography>
-                    <div>
+                    <div className={classes.aboutUsContentText}>
                         {parse(aboutUs.text)}
                     </div>
                 </div>

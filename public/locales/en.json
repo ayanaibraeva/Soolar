@@ -26,5 +26,19 @@
     "som": "som",
     "gram": "g",
     "order": "Order"
+  },
+  "noResults": {
+    "searchFor": "Your search ",
+    "nothingFound": "did not match any documents."
+  },
+  "whatsapp": {
+    "message": "Hello! I would like to place an order for: ",
+    "product": "Product",
+    "volume": "Volume",
+    "pricePerUnit": "Price per unit",
+    "quantity": "Quantity",
+    "totalPrice": "Total price",
+    "som": "som",
+    "gram": "g"
   }
 }

@@ -3,17 +3,16 @@
   top: 0
   left: 0
   width: 270px
-  height: 476px
+  height: 100vh
   background-color: var(--main)
   padding-left: 25px
-  display: none
+  display: flex
   flex-direction: column
   z-index: 999
   transform: translateX(-100%)
   transition: opacity 0.3s ease, transform 0.3s ease
 
   &.open
-    display: flex
     transform: translateX(0)
 
 .mobileMenuHeader
@@ -26,7 +25,7 @@
   background: none
   border: none
   cursor: pointer
-  margin: 10px
+  margin: 3px 9px
 
 .mobileNavbar
   margin-top: 33px
@@ -43,7 +42,11 @@
   display: flex
   padding: 10px 36px
   color: white
-  width: 150px
-
-  @media (max-width: 420px)
+  width: 140px
+  @media (max-width: 1040px)
     background-color: var(--green)
+
+.searchInput
+  display: flex
+  align-items: center
+  justify-content: center

@@ -1,5 +1,5 @@
 .header
-  width: 100vw
+  width: 100%
   height: 94px
   display: flex
   align-items: center
@@ -10,13 +10,9 @@
   z-index: 1
 
 .headerContent
-  width: 1240px
-  margin: 0 auto
   align-items: center
   justify-content: space-between
   display: flex
-  @media (max-width: 420px)
-    width: 500px
 
 .headerContentHidden
   opacity: 0
@@ -26,28 +22,48 @@
   display: flex
   gap: 32px
   white-space: nowrap
+  @media (max-width: 1200px)
+    gap: 20px
 
 .headerRight
   display: flex
   gap: 36px
+  @media (max-width: 1200px)
+    gap: 20px
 
 .burgerIcon
   display: none
   cursor: pointer
   flex-direction: column
-  gap: 4px
+  gap: 10px
+  background: none
+  @media(max-width: 430px)
+    gap: 8px
   span
-    width: 24px
-    height: 2px
+    width: 40px
+    height: 3px
     background-color: black
     display: block
+
+
+.searchInput
+  display: flex
+  justify-content: center
+  align-items: center
+
+.navItem
+  cursor: pointer
+
 .headerButton
   background-color: var(--main)
   border-radius: 16px
   display: flex
   padding: 10px 36px
   color: white
-@media (max-width: 420px)
+  @media(max-width: 1200px)
+    padding: 10px 26px
+
+@media (max-width: 1028px)
   .headerContent
     justify-content: space-between
     width: 100%
@@ -62,5 +78,4 @@
 
   .searchInput
     display: none
-.navItem
-  cursor: pointer
+

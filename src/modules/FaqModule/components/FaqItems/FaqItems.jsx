@@ -3,6 +3,7 @@ import classes from "./FaqItem.module.sass";
 import { useRef, useEffect } from "react";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { ArrowDownIcon } from "../../../../assets/Icons/ArrowDownIcon.jsx";
+import parse from "html-react-parser";
 
 export const FaqItems = ({ faqItem, onClick, isOpen }) => {
 
@@ -44,7 +45,7 @@ export const FaqItems = ({ faqItem, onClick, isOpen }) => {
                 className={`${classes.accordion_collapse} ${isOpen ? classes.open : ""}`}
             >
                 <div className={classes.accordion_body}>
-                    {faqItem.answer}
+                    {parse(faqItem.answer)}
                 </div>
             </div>
         </li>

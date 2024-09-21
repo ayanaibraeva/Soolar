@@ -5,4 +5,5 @@ export const PATH = {
     news: "/news",
     catalog: "/catalog",
     catalogDetail: "/catalogDetail/:categoryId",
+    search: "/search"
 }

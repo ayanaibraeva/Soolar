@@ -1,24 +1,19 @@
-/* HazelnutModule.sass */
 
 .nut
   position: relative
   display: flex
-  gap: 99px
   margin-bottom: 400px
-  @media (max-width: 420px)
-    gap: 0
 
 .nutCardContainer
+  //overflow: hidden
   position: absolute
   top: 80%
   left: 90%
   transform: translate(-50%, -50%)
-  width: 740px
-  height: 740px
   display: flex
   align-items: center
   justify-content: center
-  overflow: visible
+  //overflow: visible
   transition: width 1.5s ease, height 1.5s ease
 
 .nutCard
@@ -54,7 +49,7 @@
     border: 25px solid var(--main)
 
   //.nutCard img
-    //transform: rotate(calc(var(--angle) * 360deg / var(--total) - var(--rotation)deg)) translateX(-200px) rotate(calc(-var(--angle) * 360deg / var(--total) - var(--rotation)deg))
+  //  transform: rotate(calc(var(--angle) * 360deg / var(--total) - var(--rotation)deg)) translateX(-200px) rotate(calc(-var(--angle) * 360deg / var(--total) - var(--rotation)deg))
 
   .img
     width: var(--img-width)

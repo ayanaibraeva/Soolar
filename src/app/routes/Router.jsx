@@ -3,6 +3,8 @@ import { Layout } from "../layout/Layout.jsx";
 import { PATH } from "../../utils/lib/variables.js";
 import { requester } from "../../utils/requester/axiosApi.js";
 import { loadComponent } from "../../utils/helpers/helpers.js";
+import {ResultsPage} from "../../pages/resultsPage/ResultsPage.jsx";
+import {resetWarningCache} from "prop-types";
 
 const AboutUsPage = loadComponent(() => import ('../../pages/aboutUsPage/AboutUsPage.jsx'), 'AboutUsPage');
 const CatalogPage = loadComponent(() => import ('../../pages/catalogPage/CatalogPage.jsx'), 'CatalogPage');
@@ -14,7 +16,15 @@ export const router = createBrowserRouter([
         element:<Layout/>,
         loader: async () => {
             const contacts = await requester(`contacts/`);
-            return contacts;
+            const footer = await requester(`category_name/`);
+            const search = await requester(`search_product/`);
+            const linkContacts = await requester(`link_contact/`);
+            return {
+                footer,
+                contacts,
+                search,
+                linkContacts
+            };
 
         },
         children: [
@@ -29,12 +39,14 @@ export const router = createBrowserRouter([
                     const aboutUs = await requester('about_us/');
                     const faq = await requester('faq/');
                     const hitProducts = await requester('hit_products/');
+                    const banner = await requester('banner/');
                     return {
                         newsPage,
                         recipe,
                         aboutUs,
                         faq,
-                        hitProducts
+                        hitProducts,
+                        banner
                     };
                 }
             },
@@ -66,6 +78,16 @@ export const router = createBrowserRouter([
                     const categoryData = await requester(`category/${categoryId}/?page=${page}&page_size=12`);
                     return categoryData;
                 },
+            },
+            {
+                element: <ResultsPage />,
+                path: PATH.search,
+                loader: async ({ request }) => {
+                    const url = new URL(request.url);
+                    const searchTerm = url.searchParams.get("query");
+                    const searchResults = await requester(`search_product/?name=${encodeURIComponent(searchTerm)}`);
+                    return searchResults;
+                }
             }
         ]
     }

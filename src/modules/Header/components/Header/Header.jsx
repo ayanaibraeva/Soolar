@@ -1,6 +1,6 @@
 import classes from "./Header.module.sass";
 
-import { Link } from "react-router-dom";
+import {Link, useLoaderData} from "react-router-dom";
 import { useState } from "react";
 import { useNavbar } from "../../../../utils/lib/utils.js";
 import { useTranslation } from "react-i18next";
@@ -12,6 +12,7 @@ import {MultiContainer} from "../../../../UI/container/MultiContainer.jsx";
 import {Typography} from "../../../../UI/Typography/Typography.jsx";
 
 export const Header = ({ onContactsClick }) => {
+    const {linkContacts} = useLoaderData();
     const navbarItems = useNavbar(onContactsClick);
     const [searchText, setSearchText] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ export const Header = ({ onContactsClick }) => {
     };
 
     return (
-        <div className={classes.header}>
+        <header className={classes.header}>
             <MultiContainer>
                 <div className={`${classes.headerContent} ${menuOpen ? classes.headerContentHidden : ""}`}>
                     <button className={classes.burgerIcon} onClick={toggleMenu}>
@@ -34,7 +35,6 @@ export const Header = ({ onContactsClick }) => {
                     <Link to="/">
                         <LogoHeaderIcon />
                     </Link>
-
 
                     <ul className={classes.navbar}>
                         {navbarItems.map((item) => (
@@ -63,7 +63,7 @@ export const Header = ({ onContactsClick }) => {
                         <HeaderSelect />
                             <button
                                 className={classes.headerButton}
-                                onClick={() => window.open("https://web.whatsapp.com/", "_blank")}
+                                onClick={() => window.open(linkContacts?.contact_link, "_blank")}
                             >
                                 {t("header.contact")}
                             </button>
@@ -78,6 +78,6 @@ export const Header = ({ onContactsClick }) => {
                     onContactsClick={onContactsClick}
                 />
             </MultiContainer>
-        </div>
+        </header>
     );
 };
