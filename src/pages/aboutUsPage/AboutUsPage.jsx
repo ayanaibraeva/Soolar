@@ -1,4 +1,3 @@
-
 import { AboutUsModule } from "../../modules/MainModule/AboutUsModule/AboutUsModule.jsx";
 import { HazelnutModule } from "../../modules/MainModule/HazelnutModule/HazelnutModule.jsx";
 import { NewsMain } from "../../modules/MainModule/NewsMainModule/NewsMain.jsx";

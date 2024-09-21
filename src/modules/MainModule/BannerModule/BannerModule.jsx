@@ -7,8 +7,11 @@ export const BannerModule = () => {
     const image = banner.image;
 
     return (
-        <div className={classes.banner}>
-            {video ? (
+        <div
+            className={classes.banner}
+            style={{ backgroundImage: video ? 'none' : `url(${image})` }}
+        >
+            {video && (
                 <video autoPlay muted playsInline loop className={classes.video}>
                     <source src={video} type="video/mp4" />
                     <track
@@ -18,8 +21,6 @@ export const BannerModule = () => {
                         label="english_captions"
                     />
                 </video>
-            ) : (
-                <img src={image} alt="Banner" className={classes.image} />
             )}
             <div className={classes.overlay} />
         </div>
