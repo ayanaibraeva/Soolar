@@ -52,50 +52,47 @@ export const HazelnutModule = () => {
 
     return (
         <MultiContainer>
-                <div className={classes.nut} ref={hazelnutRef}>
-                    <div className={classes.nutContent}>
-                        <Typography variant="h2">
-                            {recipe[currentIndex].product_title}
-                        </Typography>
-                        <Typography variant="body600" className={classes.nutContentText}>
-                            {recipe[currentIndex].description}
-                        </Typography>
-                        <Link to={recipe[currentIndex].link} target="_blank">
-                            <button className={classes.recipeBtn}>
-                                {t("aboutUs.recipes")}
-                                <ArrowRightMoreIcon height="20px" color="white" width="20px"/>
-                            </button>
-                        </Link>
-                    </div>
-                    <div className={classes.nutCardContainer}>
-                        <div
-                            className={classes.nutCard}
-                            style={{ transform: `rotate(${rotationAngle}deg)` }}
-                        >
-                            {recipe?.map((content, index) => {
-                                const angle = (index * 360) / recipe.length;
-                                const isActive = index === currentIndex;
+            <div className={classes.nut} ref={hazelnutRef}>
+                <div className={classes.nutContent}>
+                    <Typography variant="h2">
+                        {recipe[currentIndex].product_title}
+                    </Typography>
+                    <Typography variant="body600" className={classes.nutContentText}>
+                        {recipe[currentIndex].description}
+                    </Typography>
+                    <Link to={recipe[currentIndex].link} target="_blank">
+                        <button className={classes.recipeBtn}>
+                            {t("aboutUs.recipes")}
+                            <ArrowRightMoreIcon height="20px" color="white" width="20px" />
+                        </button>
+                    </Link>
+                </div>
+                <div className={classes.nutCardContainer}>
+                    <div className={classes.nutCard} style={{ transform: `rotate(${rotationAngle}deg)` }}>
+                        {recipe?.map((content, index) => {
+                            const angle = (index * 360) / recipe.length;
+                            const isActive = index === currentIndex;
 
-                                const imgStyle = {
-                                    transform: `rotate(${angle}deg) translateX(${windowWidth <= 420 ? '-230px' : '-350px'}) rotate(${-angle - rotationAngle}deg)`,
-                                    width: isActive ? (windowWidth <= 420 ? "213px" : "423px") : (windowWidth <= 420 ? "171px" : "250px"),
-                                    cursor: "pointer",
-                                };
+                            const imgStyle = {
+                                transform: `rotate(${angle}deg) translateX(${windowWidth <= 768 ? '-230px' : '-350px'}) rotate(${-angle - rotationAngle}deg)`,
+                                width: isActive ? (windowWidth <= 768 ? "213px" : "423px") : (windowWidth <= 768 ? "171px" : "250px"),
+                                cursor: "pointer",
+                            };
 
-                                return (
-                                    <img
-                                        key={index}
-                                        className={`${classes.img} ${isActive ? classes.activeImg : ""}`}
-                                        src={content.image}
-                                        alt={content.product_title}
-                                        style={imgStyle}
-                                        onClick={() => handleImageClick(index)}
-                                    />
-                                );
-                            })}
-                        </div>
+                            return (
+                                <img
+                                    key={index}
+                                    className={`${classes.img} ${isActive ? classes.activeImg : ""}`}
+                                    src={content.image}
+                                    alt={content.product_title}
+                                    style={imgStyle}
+                                    onClick={() => handleImageClick(index)}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
-            </MultiContainer>
+            </div>
+        </MultiContainer>
     );
 };
