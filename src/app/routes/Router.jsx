@@ -4,7 +4,6 @@ import { PATH } from "../../utils/lib/variables.js";
 import { requester } from "../../utils/requester/axiosApi.js";
 import { loadComponent } from "../../utils/helpers/helpers.js";
 import {ResultsPage} from "../../pages/resultsPage/ResultsPage.jsx";
-import {resetWarningCache} from "prop-types";
 
 const AboutUsPage = loadComponent(() => import ('../../pages/aboutUsPage/AboutUsPage.jsx'), 'AboutUsPage');
 const CatalogPage = loadComponent(() => import ('../../pages/catalogPage/CatalogPage.jsx'), 'CatalogPage');

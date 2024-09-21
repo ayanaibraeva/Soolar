@@ -1,5 +1,4 @@
 import classes from './SearchInput.module.sass';
-
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +8,7 @@ export const SearchInput = ({ value, onChange }) => {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && value.trim() !== '') {
-            e.preventDefault();
+            console.log('Enter key pressed, navigating to:', `/search?query=${encodeURIComponent(value.trim())}`);
             navigate(`/search?query=${encodeURIComponent(value.trim())}`);
         }
     };

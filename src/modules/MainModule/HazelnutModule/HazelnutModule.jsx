@@ -74,7 +74,7 @@ export const HazelnutModule = () => {
                             const isActive = index === currentIndex;
 
                             const imgStyle = {
-                                transform: `rotate(${angle}deg) translateX(${windowWidth <= 768 ? '-230px' : '-350px'}) rotate(${-angle - rotationAngle}deg)`,
+                                transform: `rotate(${angle}deg) translateX(${windowWidth <= 768 ? '-210px' : '-330px'}) rotate(${-angle - rotationAngle}deg)`,
                                 width: isActive ? (windowWidth <= 768 ? "213px" : "423px") : (windowWidth <= 768 ? "171px" : "250px"),
                                 cursor: "pointer",
                             };
