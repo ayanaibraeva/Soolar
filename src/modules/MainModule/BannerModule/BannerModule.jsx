@@ -1,11 +1,11 @@
 import classes from "./Banner.module.sass";
+
 import { useLoaderData } from "react-router-dom";
 
 export const BannerModule = () => {
     const { banner } = useLoaderData();
     const video = banner.video;
     const image = banner.image;
-
     return (
         <div
             className={classes.banner}

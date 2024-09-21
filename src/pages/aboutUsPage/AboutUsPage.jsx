@@ -8,13 +8,13 @@ import {BannerModule} from "../../modules/MainModule/BannerModule/BannerModule.j
 export const AboutUsPage = () => {
 
     return (
-        <>
+        <main>
             <BannerModule/>
             <AboutUsModule />
             <HitProducts/>
             <HazelnutModule />
             <NewsMain />
             <Faq/>
-        </>
+        </main>
     );
 };
