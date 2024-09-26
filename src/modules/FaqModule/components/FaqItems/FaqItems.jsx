@@ -26,6 +26,7 @@ export const FaqItems = ({ faqItem, onClick, isOpen }) => {
                 <Typography
                     className={`${classes.textFaq} ${isOpen ? classes.fullText : ""}`}
                     variant="body"
+                    color="black"
                 >
                     {faqItem.question}
                 </Typography>

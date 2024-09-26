@@ -22,6 +22,7 @@
   display: flex
   gap: 32px
   white-space: nowrap
+  list-style: none
   @media (max-width: 1200px)
     gap: 20px
 
@@ -53,13 +54,32 @@
 
 .navItem
   cursor: pointer
+  position: relative
+  color: black
+
+.navItem::after
+  content: ''
+  position: absolute
+  width: 0
+  height: 3px
+  bottom: -3px
+  left: 50%
+  background-color: var(--main)
+  visibility: hidden
+  transition: all 0.2s ease-in-out
+  transform: translateX(-50%)
+
+.navItem:hover::after
+  visibility: visible
+  width: 100%
+
 
 .headerButton
   background-color: var(--main)
   border-radius: 16px
   display: flex
   padding: 10px 36px
-  color: white
+  color: #fff
   @media(max-width: 1200px)
     padding: 10px 26px
 

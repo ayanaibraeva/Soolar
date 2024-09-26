@@ -5,18 +5,19 @@ import { useTranslation } from 'react-i18next';
 export const SearchInput = ({ value, onChange }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && value.trim() !== '') {
-            console.log('Enter key pressed, navigating to:', `/search?query=${encodeURIComponent(value.trim())}`);
-            navigate(`/search?query=${encodeURIComponent(value.trim())}`);
+            navigateToSearch();
         }
     };
-
     const handleSearchClick = () => {
         if (value.trim() !== '') {
-            navigate(`/search?query=${encodeURIComponent(value.trim())}`);
+            navigateToSearch();
         }
+    };
+    const navigateToSearch = () => {
+        navigate(`/search?query=${encodeURIComponent(value.trim())}`);
+        clearInput();
     };
 
     const clearInput = () => {

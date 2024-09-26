@@ -1,9 +1,10 @@
-export const ArrowDownIcon = ({width, height, color, className}) => {
+export const ArrowDownIcon = ({width, height, color, className, style}) => {
     return (
         <svg
             width={width}
             height={height}
             className={className}
+            style={style}
             viewBox="0 0 21 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">

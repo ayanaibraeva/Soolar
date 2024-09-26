@@ -1,4 +1,5 @@
 import classes from "./HeaderSelect.module.sass";
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { ArrowDownIcon } from "../../../../assets/Icons/ArrowDownIcon.jsx";
 import { useTranslation } from "react-i18next";
@@ -33,6 +34,7 @@ export const HeaderSelect = () => {
                 type="button"
                 className={classes.selectedOption}
                 onClick={() => setActiveList((prev) => !prev)}
+                style={{ color: "#000000" }}
             >
                 {languages.find((lang) => lang.code === i18n.language)?.label}
                 <ArrowDownIcon

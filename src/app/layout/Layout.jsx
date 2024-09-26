@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import { Header } from "../../modules/Header/components/Header/Header.jsx";
 import { Footer } from "../../modules/Footer/components/Footer/Footer.jsx";
 import { Loader } from "../../UI/Loader/Loader.jsx";
-import { useScrollToTop } from "../../utils/hooks/useScrollToTop.js";
 import { Suspense, useRef } from "react";
+import {useScrollToTop} from "../../utils/hooks/useScrollToTop.js";
 
 export const Layout = () => {
     const footerRef = useRef(null);
@@ -14,7 +14,7 @@ export const Layout = () => {
         }
     };
 
-    useScrollToTop(['/']);
+    useScrollToTop(["/"]);
 
     return (
         <>

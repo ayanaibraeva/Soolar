@@ -1,4 +1,5 @@
 import classes from "./HeaderMobile.module.sass";
+
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SearchInput } from "../SearchInput/SearchInput.jsx";

@@ -1,6 +1,6 @@
 import classes from "./Header.module.sass";
 
-import {Link, useLoaderData} from "react-router-dom";
+import {Link, NavLink, useLoaderData} from "react-router-dom";
 import { useState } from "react";
 import { useNavbar } from "../../../../utils/lib/utils.js";
 import { useTranslation } from "react-i18next";
@@ -11,8 +11,11 @@ import {SearchInput} from "../SearchInput/SearchInput.jsx";
 import {MultiContainer} from "../../../../UI/container/MultiContainer.jsx";
 import {Typography} from "../../../../UI/Typography/Typography.jsx";
 
+
 export const Header = ({ onContactsClick }) => {
+
     const {linkContacts} = useLoaderData();
+
     const navbarItems = useNavbar(onContactsClick);
     const [searchText, setSearchText] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
@@ -26,6 +29,7 @@ export const Header = ({ onContactsClick }) => {
         <header className={classes.header}>
             <MultiContainer>
                 <div className={`${classes.headerContent} ${menuOpen ? classes.headerContentHidden : ""}`}>
+
                     <button className={classes.burgerIcon} onClick={toggleMenu}>
                         <span></span>
                         <span></span>
@@ -40,17 +44,23 @@ export const Header = ({ onContactsClick }) => {
                         {navbarItems.map((item) => (
                             <li key={item.id}>
                                 {item.action ? (
-                                    <div onClick={item.action} className={classes.navItem}>
-                                        <Typography variant="body" color="black">
+                                    <div
+                                        onClick={item.action}
+                                        className={classes.navItem}
+                                    >
+                                        <Typography variant="body">
                                             {item.title}
                                         </Typography>
                                     </div>
                                 ) : (
-                                    <Link to={item.caption}>
-                                        <Typography variant="body" color="black">
+                                    <NavLink
+                                        to={item.caption}
+                                        className={classes.navItem}
+                                    >
+                                        <Typography variant="body">
                                             {item.title}
                                         </Typography>
-                                    </Link>
+                                    </NavLink>
                                 )}
                             </li>
                         ))}
@@ -58,7 +68,10 @@ export const Header = ({ onContactsClick }) => {
 
                     <div className={classes.headerRight}>
                         <div className={classes.searchInput}>
-                            <SearchInput value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+                            <SearchInput
+                                value={searchText}
+                                onChange={(e) => setSearchText(e.target.value)}
+                            />
                         </div>
                         <HeaderSelect />
                             <button

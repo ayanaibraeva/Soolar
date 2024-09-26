@@ -15,7 +15,9 @@
     "whoAreWe" : "Кто мы?",
     "accordion": "Часто задаваемые вопросы",
     "recipes": "Рецепты",
-    "topProducts": "Топовые продукты"
+    "topProducts": "Топовые продукты",
+    "viewRecipe": "Посмотреть рецепт",
+    "learnMore": "Подробнее"
   },
   "footer": {
     "address": "Адрес",

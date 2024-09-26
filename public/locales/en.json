@@ -15,7 +15,9 @@
     "whoAreWe" : "Who are we?",
     "accordion": "Frequently asked questions",
     "recipes": "Recipes",
-    "topProducts": "Top products"
+    "topProducts": "Top products",
+    "viewRecipe": "View recipe",
+    "learnMore": "Learn More"
   },
   "footer": {
     "address": "Address",

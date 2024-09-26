@@ -1,4 +1,5 @@
 import classes from "./ProductCard.module.sass";
+
 import { useState } from "react";
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
 import { CartIcon } from "../../../../assets/Icons/CartIcon.jsx";
@@ -7,7 +8,7 @@ import { useTranslation } from "react-i18next";
 const ProductCard = ({ product }) => {
     const [selectedVolume, setSelectedVolume] = useState(product.prices[0]?.volume || '');
     const [quantity, setQuantity] = useState(1);
-    const { t } = useTranslation();  // Move the hook to the component body
+    const { t } = useTranslation();
 
     const handleVolumeSelect = (volume) => {
         setSelectedVolume(volume);
@@ -28,7 +29,6 @@ const ProductCard = ({ product }) => {
     const selectedPrice = selectedPriceItem?.price;
     const totalPrice = selectedPrice * quantity;
 
-    // Pass the 't' function as part of the logic
     const handleSendToWhatsApp = () => {
         if (selectedPriceItem?.order_link) {
             const message = `${t("whatsapp.message")} ${t('whatsapp.product')}: ${product.name}, ` +
@@ -59,7 +59,7 @@ const ProductCard = ({ product }) => {
                         className={`${classes.volumeSpan} ${selectedVolume === priceItem.volume ? classes.selected : ''}`}
                         onClick={() => handleVolumeSelect(priceItem.volume)}
                     >
-                        {priceItem.volume} {t("catalog.gram")}
+                        {priceItem.volume}
                     </span>
                 ))}
             </div>
@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
                 <span>{totalPrice} {t("catalog.som")}</span>
                 <div className={classes.quantityControl}>
                     <button onClick={() => handleQuantityChange('decrease')}>-</button>
-                    <span>{quantity}</span>
+                        <span>{quantity}</span>
                     <button onClick={() => handleQuantityChange('increase')}>+</button>
                 </div>
             </div>

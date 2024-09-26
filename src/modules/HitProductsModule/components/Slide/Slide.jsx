@@ -2,17 +2,12 @@ import classes from './Slide.module.sass';
 
 import { useState, useEffect } from 'react';
 import { Typography } from "../../../../UI/Typography/Typography.jsx";
+import {ArrowRightIcon} from "../../../../assets/Icons/ArrowRightIcon.jsx";
+import {ArrowLeftIcon} from "../../../../assets/Icons/ArrowLeftIcon.jsx";
 
 const Slide = ({ images, name, description }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const totalImages = images.length;
-
-    const handlePrevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : totalImages - 1));
-    };
-    const handleNextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex < totalImages - 1 ? prevIndex + 1 : 0));
-    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -54,8 +49,9 @@ const Slider = ({ slides }) => {
     return (
         <div className={classes.sliderContainer}>
             <button className={classes.sliderButtonPrev} onClick={handlePrevSlide}>
-                ‹
+                <ArrowLeftIcon color="black" width="24px" height="24px"/>
             </button>
+
             <div className={classes.sliderWrapper}>
                 {totalSlides > 0 ? (
                     <Slide {...slides[currentSlideIndex]} />
@@ -64,7 +60,7 @@ const Slider = ({ slides }) => {
                 )}
             </div>
             <button className={classes.sliderButtonNext} onClick={handleNextSlide}>
-                ›
+                <ArrowRightIcon  color="black" width="24px" height="24px"/>
             </button>
 
             <div className={classes.indicatorContainer}>

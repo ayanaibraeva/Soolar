@@ -5,6 +5,7 @@
     flex-direction: column
     justify-content: center
     align-items: center
+
 .inputContainer
   margin-top: 18px
   margin-bottom: 65px
@@ -15,19 +16,40 @@
   align-items: center
   @media (max-width: 1040px)
     width: 700px
-  @media (max-width: 630px)
+  @media (max-width: 768px)
     width: 500px
-  @media (max-width: 430px)
+  @media (max-width: 540px)
     width: 320px
     margin-bottom: 40px
+
 .inputField
   width: 100%
   background-color: #F8F8F8
   border: 1px solid var(--green)
-  padding: 10px 10px 10px 35px
+  padding: 15px 10px 15px 35px
   border-radius: 12px
   outline: none
   font-size: 16px
+  @media (max-width: 430px)
+    border-radius: 5px
+    padding: 6px 10px 6px 35px
+
+
+.searchButton
+  background-color: var(--main)
+  padding: 12px 21px
+  border-radius: 13px
+  color: white
+  font-size: 14px
+  font-style: normal
+  font-weight: 400
+  line-height: normal
+  position: absolute
+  right: 6px
+  @media(max-width: 430px)
+    padding: 5px 17px
+    border-radius: 5px
+    right: 4px
 
 .icon
   position: absolute
@@ -40,8 +62,15 @@
 
 .clearIcon
   position: absolute
-  right: 20px
+  right: 100px
   cursor: pointer
+  font-size: 30px
+  line-height: 30px
+  @media (max-width: 430px)
+    right: 90px
+    font-size: 20px
+    line-height: 20px
+
 .text
   text-align: center
 .catalogPage

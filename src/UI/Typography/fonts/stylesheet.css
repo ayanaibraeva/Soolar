@@ -1,11 +1,106 @@
 @font-face {
     font-family: 'Gilroy';
+    src: url('Gilroy-Black.eot');
+    src: url('Gilroy-Black.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Black.woff2') format('woff2'),
+        url('Gilroy-Black.woff') format('woff'),
+        url('Gilroy-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Heavy.eot');
+    src: url('Gilroy-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Heavy.woff2') format('woff2'),
+        url('Gilroy-Heavy.woff') format('woff'),
+        url('Gilroy-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Extrabold.eot');
+    src: url('Gilroy-Extrabold.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Extrabold.woff2') format('woff2'),
+        url('Gilroy-Extrabold.woff') format('woff'),
+        url('Gilroy-Extrabold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Bold.eot');
+    src: url('Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Bold.woff2') format('woff2'),
+        url('Gilroy-Bold.woff') format('woff'),
+        url('Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Thin.eot');
+    src: url('Gilroy-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Thin.woff2') format('woff2'),
+        url('Gilroy-Thin.woff') format('woff'),
+        url('Gilroy-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Medium.eot');
+    src: url('Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Medium.woff2') format('woff2'),
+        url('Gilroy-Medium.woff') format('woff'),
+        url('Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Regular.eot');
+    src: url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Regular.woff2') format('woff2'),
+        url('Gilroy-Regular.woff') format('woff'),
+        url('Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Semibold.eot');
+    src: url('Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Semibold.woff2') format('woff2'),
+        url('Gilroy-Semibold.woff') format('woff'),
+        url('Gilroy-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
     src: url('Gilroy-Light.eot');
     src: url('Gilroy-Light.eot?#iefix') format('embedded-opentype'),
         url('Gilroy-Light.woff2') format('woff2'),
         url('Gilroy-Light.woff') format('woff'),
-        url('Gilroy-Light.ttf') format('truetype'),
-        url('Gilroy-Light.svg#Gilroy-Light') format('svg');
+        url('Gilroy-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -13,13 +108,12 @@
 
 @font-face {
     font-family: 'Gilroy';
-    src: url('Gilroy-ExtraBold.eot');
-    src: url('Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('Gilroy-ExtraBold.woff2') format('woff2'),
-        url('Gilroy-ExtraBold.woff') format('woff'),
-        url('Gilroy-ExtraBold.ttf') format('truetype'),
-        url('Gilroy-ExtraBold.svg#Gilroy-ExtraBold') format('svg');
-    font-weight: bold;
+    src: url('Gilroy-UltraLight.eot');
+    src: url('Gilroy-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-UltraLight.woff2') format('woff2'),
+        url('Gilroy-UltraLight.woff') format('woff'),
+        url('Gilroy-UltraLight.ttf') format('truetype');
+    font-weight: 200;
     font-style: normal;
     font-display: swap;
 }
