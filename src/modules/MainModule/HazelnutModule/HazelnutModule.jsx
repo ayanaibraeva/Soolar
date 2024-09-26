@@ -77,8 +77,8 @@ export const HazelnutModule = () => {
                             const angle = (index * 360) / recipe.length;
                             const isActive = index === currentIndex;
                             const imgStyle = {
-                                transform: `rotate(${angle}deg) translateX(${windowWidth <= 768 ? '-210px' : '-330px'}) rotate(${-angle - rotationAngle}deg)`,
-                                width: isActive ? (windowWidth <= 768 ? "213px" : "423px") : (windowWidth <= 768 ? "171px" : "250px"),
+                                transform: `rotate(${angle}deg) translateX(${windowWidth <= 1150 ? '-210px' : '-330px'}) rotate(${-angle - rotationAngle}deg)`,
+                                width: isActive ? (windowWidth <= 1150 ? "213px" : "423px") : (windowWidth <= 1150 ? "171px" : "250px"),
                                 cursor: "pointer",
                             };
                             return (
