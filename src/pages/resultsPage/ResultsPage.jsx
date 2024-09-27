@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Typography } from "../../UI/Typography/Typography.jsx";
 import { Breadcrumbs } from "../../UI/breadcrumbs/Breadcrumbs.jsx";
-import {Pagination} from "../../UI/Pagination/Pagination.jsx";
+import { Pagination } from "../../UI/Pagination/Pagination.jsx";
 
 
 export const ResultsPage = () => {
