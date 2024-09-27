@@ -6,14 +6,16 @@ import {useNavbar} from "../../../../utils/lib/utils.js";
 import {LogoFooterIcon} from "../../../../assets/Icons/LogoFooterIcon.jsx";
 import {MultiContainer} from "../../../../UI/container/MultiContainer.jsx";
 import {FooterContacts} from "../FooterContacts/FooterContacts.jsx";
+import {useTranslation} from "react-i18next";
 
 export const Footer = () => {
 
     const navbarItems = useNavbar();
     const { footer } = useLoaderData();
-    console.log(footer.id)
 
     const navigate = useNavigate();
+
+    const {t} = useTranslation();
     const handleClick = (id) => {
         navigate(`/catalogDetail/${id}`);
     };
@@ -32,7 +34,7 @@ export const Footer = () => {
                         <ul className={classes.navbar}>
                             {navbarItems.map((item) => (
                                 item.id !== 3 && (
-                                    <li key={item.id}>
+                                    <li key={item.id}> {/* Добавлен key */}
                                         {item.action ? (
                                             <div onClick={item.action} className={classes.navItem}>
                                                 <Typography variant="bodyL" color="black">
@@ -56,18 +58,16 @@ export const Footer = () => {
                             className={classes.catalog}
                             to={"/catalog"}
                         >
-                            Каталог
+                            {t("catalog.catalog")}
                         </Link>
                         <div className={classes.catalogList}>
-                            {
-                                footer.map((item) => (
-                                    <ul>
-                                        <li onClick={() => handleClick(item.id)}>
-                                            {item.name}
-                                        </li>
-                                    </ul>
-                                ))
-                            }
+                            {footer.map((item) => (
+                                <ul key={item.id}> {/* Добавлен key */}
+                                    <li onClick={() => handleClick(item.id)}>
+                                        {item.name}
+                                    </li>
+                                </ul>
+                            ))}
                         </div>
                     </div>
                     <FooterContacts/>

@@ -3,13 +3,15 @@ import { Layout } from "../layout/Layout.jsx";
 import { PATH } from "../../utils/lib/variables.js";
 import { requester } from "../../utils/requester/axiosApi.js";
 import { loadComponent } from "../../utils/helpers/helpers.js";
-import {RecipePage} from "../../pages/receptPage/RecipePage.jsx";
+
 
 const AboutUsPage = loadComponent(() => import ('../../pages/aboutUsPage/AboutUsPage.jsx'), 'AboutUsPage');
 const CatalogPage = loadComponent(() => import ('../../pages/catalogPage/CatalogPage.jsx'), 'CatalogPage');
 const NewsPage = loadComponent(() => import ('../../pages/newsPage/NewsPage.jsx'), 'NewsPage');
 const CatalogDetail = loadComponent(() => import ('../../pages/catalogDetail/CatalogDetail.jsx'), 'CatalogDetail');
+const RecipePage = loadComponent(() => import ('../../pages/receptPage/RecipePage.jsx'), 'RecipePage');
 const ResultsPage = loadComponent(() => import ('../../pages/resultsPage/ResultsPage.jsx'), 'ResultsPage');
+const ErrorPage = loadComponent(() => import ('../../pages/404Page/ErrorPage.jsx'), 'ErrorPage');
 
 export const router = createBrowserRouter([
     {
@@ -95,6 +97,10 @@ export const router = createBrowserRouter([
                     const recipe = await requester(`recipe/${recipeId}`);
                     return recipe;
                 }
+            },
+            {
+                element: <ErrorPage/>,
+                path: PATH.error
             }
 
         ]

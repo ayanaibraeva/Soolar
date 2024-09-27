@@ -1,23 +1,30 @@
 import classes from './SearchInput.module.sass';
+
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export const SearchInput = ({ value, onChange }) => {
+export const SearchInput = ({ value, onChange, onSearch }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && value.trim() !== '') {
             navigateToSearch();
         }
     };
+
     const handleSearchClick = () => {
         if (value.trim() !== '') {
             navigateToSearch();
         }
     };
+
     const navigateToSearch = () => {
         navigate(`/search?query=${encodeURIComponent(value.trim())}`);
         clearInput();
+        if (onSearch) {
+            onSearch();
+        }
     };
 
     const clearInput = () => {

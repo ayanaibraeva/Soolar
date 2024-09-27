@@ -43,5 +43,9 @@
     "totalPrice": "Total price",
     "som": "som",
     "gram": "g"
+  },
+  "error": {
+  "main": "Go to homepage",
+  "404": "Page Not Found"
   }
 }

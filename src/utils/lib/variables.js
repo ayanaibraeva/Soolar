@@ -6,5 +6,6 @@ export const PATH = {
     catalog: "/catalog",
     catalogDetail: "/catalogDetail/:categoryId",
     search: "/search",
-    recipe: "/recipe/:recipeId"
+    recipe: "/recipe/:recipeId",
+    error: "*"
 }

@@ -38,7 +38,7 @@ export const HeaderMobile = ({ navbarItems, searchText, setSearchText, menuOpen,
                 <SearchInput
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
-                    onKeyDown={handleKeyDown}
+                    onSearch={toggleMenu}
                 />
             </div>
             <ul className={classes.mobileNavbar}>
@@ -53,7 +53,7 @@ export const HeaderMobile = ({ navbarItems, searchText, setSearchText, menuOpen,
                         ) : (
                             <Link
                                 to={item.caption}
-                                onClick={() => handleNavigation(item.caption)} // Call handleNavigation
+                                onClick={() => handleNavigation(item.caption)}
                             >
                                 <Typography variant="body" color="black">
                                     {item.title}
