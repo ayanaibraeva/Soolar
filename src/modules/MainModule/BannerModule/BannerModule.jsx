@@ -1,5 +1,4 @@
 import classes from "./Banner.module.sass";
-
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
@@ -28,9 +27,10 @@ export const BannerModule = () => {
     return (
         <div
             className={classes.banner}
-            style={{ backgroundImage: video ? 'none' : `url(${backgroundImage})` }}
+            style={{ backgroundImage: video && !isMobile ? 'none' : `url(${backgroundImage})` }}
         >
-            {video && (
+
+            {!isMobile && video && (
                 <video autoPlay muted playsInline loop className={classes.video}>
                     <source src={video} type="video/mp4" />
                     <track
@@ -38,6 +38,7 @@ export const BannerModule = () => {
                         kind="captions"
                         srcLang="en"
                         label="english_captions"
+                        controls={false}
                     />
                 </video>
             )}
