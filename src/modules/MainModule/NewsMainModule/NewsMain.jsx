@@ -8,9 +8,7 @@ import {CustomMoreButton} from "../../../UI/CustomMoreButton/CustomMoreButton.js
 import {useTranslation} from "react-i18next";
 
 export const NewsMain = () => {
-
     const {newsPage} = useLoaderData();
-
     const [news, setNews] = useState([]);
     const navigate = useNavigate();
     const {t} = useTranslation();
@@ -29,7 +27,7 @@ export const NewsMain = () => {
             <div className={classes.new}>
                 {news.map((item, index) => (
                     <div
-                        className={`${classes.newsCard} ${index === 0 ? classes.firstCard : ''}`}
+                        className={`${classes.newsCard} ${index === 0 ? classes.firstCard : classes.squareCard}`}
                         key={index}
                         onClick={() => handleCardClick(item.id)}
                     >

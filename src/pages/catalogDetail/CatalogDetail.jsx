@@ -31,7 +31,7 @@ export const CatalogDetail = () => {
 
     return (
         <MultiContainer>
-            <div>
+            <div className={classes.catalogDetail}>
                 <Breadcrumbs currentPage={t("header.catalog")} parentPageLink={PATH.catalog} currentPageId={categoryData?.results?.name}/>
                 <Typography className={classes.title} variant="h3">
                     {categoryData?.results?.name}
