@@ -28,16 +28,3 @@ export const requester = async (url) => {
 };
 
 
-
-// import axios from 'axios'
-// import {BASE_URL} from "../lib/variables.js";
-//
-// export const requester = axios.create({
-//     baseURL: BASE_URL,
-// })
-//
-// requester.interceptors.request.use((config) => {
-//     config.headers['Accept-Language'] = localStorage.getItem('i18nextLng')
-//
-//     return config
-// })

@@ -34,7 +34,7 @@ export const Footer = () => {
                         <ul className={classes.navbar}>
                             {navbarItems.map((item) => (
                                 item.id !== 3 && (
-                                    <li key={item.id}> {/* Добавлен key */}
+                                    <li key={item.id}>
                                         {item.action ? (
                                             <div onClick={item.action} className={classes.navItem}>
                                                 <Typography variant="bodyL" color="black">
@@ -62,7 +62,7 @@ export const Footer = () => {
                         </Link>
                         <div className={classes.catalogList}>
                             {footer.map((item) => (
-                                <ul key={item.id}> {/* Добавлен key */}
+                                <ul key={item.id}>
                                     <li onClick={() => handleClick(item.id)}>
                                         {item.name}
                                     </li>

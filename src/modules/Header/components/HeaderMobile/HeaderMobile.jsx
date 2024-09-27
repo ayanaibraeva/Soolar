@@ -1,5 +1,4 @@
 import classes from "./HeaderMobile.module.sass";
-
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SearchInput } from "../SearchInput/SearchInput.jsx";
@@ -19,12 +18,6 @@ export const HeaderMobile = ({ navbarItems, searchText, setSearchText, menuOpen,
     const handleNavigation = (path) => {
         navigate(path);
         toggleMenu();
-    };
-
-    const handleKeyDown = (e) => {
-        if (e.key === "Enter") {
-            toggleMenu();
-        }
     };
 
     return (
