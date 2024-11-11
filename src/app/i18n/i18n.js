@@ -2,8 +2,8 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import ruTranslations from "../../../public/locales/ru.json";
-import enTranslations from "../../../public/locales/en.json";
+import ruTranslations from "../../locales/ru.json";
+import enTranslations from "../../locales/en.json";
 
 i18n
     .use(initReactI18next)
