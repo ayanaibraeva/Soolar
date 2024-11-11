@@ -5,10 +5,15 @@ import {MultiContainer} from "../../../UI/container/MultiContainer.jsx";
 import {useLoaderData} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import parse from "html-react-parser";
+
 export const AboutUsModule = () => {
 
     const { aboutUs } = useLoaderData();
     const { t } = useTranslation();
+
+    if (!aboutUs || !aboutUs.text || !aboutUs.image) {
+        return null
+    }
 
     return (
         <MultiContainer>

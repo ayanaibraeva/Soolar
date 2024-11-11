@@ -48,8 +48,8 @@ export const HazelnutModule = () => {
         };
     }, []);
 
-    if (!recipe?.length) {
-        return <p>{t('Рецепты не найдены. Пожалуйста, попробуйте позже.')}</p>;
+    if (!recipe || recipe.length === 0) {
+        return null;
     }
 
     return (

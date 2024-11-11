@@ -14,8 +14,14 @@ export const NewsMain = () => {
     const {t} = useTranslation();
 
     useEffect(() => {
-        setNews(newsPage?.results?.slice(0, 4));
+        if (newsPage?.results?.length) {
+            setNews(newsPage.results.slice(0, 4));
+        }
     }, [newsPage]);
+
+    if (!news.length) {
+        return null;
+    }
 
     const handleCardClick = () => {
         navigate(`/news`);

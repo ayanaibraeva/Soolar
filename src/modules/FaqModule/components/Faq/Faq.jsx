@@ -29,6 +29,10 @@ export const Faq = () => {
         };
     }, []);
 
+    if (!faqs?.length) {
+        return null;
+    }
+
     return (
         <section>
             <MultiContainer>

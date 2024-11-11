@@ -10,6 +10,10 @@ export const BannerModule = () => {
 
     const [isMobile, setIsMobile] = useState(false);
 
+    if (!banner || (!video && !image && !mobileImg)) {
+        return null;
+    }
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 430);

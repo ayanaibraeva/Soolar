@@ -2,6 +2,7 @@
   margin-top: 52px
   align-items: center
   display: flex
+  gap: 8px
   @media (max-width: 950px)
     flex-direction: column
     margin-top: 39px
@@ -32,12 +33,17 @@
 
 
 .image
-  height: 378px
+  height: 368px
+  width: 740px
   overflow: hidden
   @media (max-width: 950px)
     margin-top: 16px
-    height: 100%
+    width: 100%
+  @media (max-width: 768px)
+    height: 185px
+    width: 360px
   img
+    height: 100%
     width: 100%
     object-fit: cover
 

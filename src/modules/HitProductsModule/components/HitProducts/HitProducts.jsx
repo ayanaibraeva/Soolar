@@ -17,6 +17,10 @@ export const HitProducts = () => {
         description: product.description
     }));
 
+    if (!hitProducts?.results?.length || !hitOfSalesProducts.length) {
+        return null;
+    }
+
     return (
         <MultiContainer>
             <div className={classes.slider}>

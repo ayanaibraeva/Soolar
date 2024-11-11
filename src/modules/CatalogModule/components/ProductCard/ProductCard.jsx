@@ -53,7 +53,7 @@ const ProductCard = ({ product }) => {
             </div>
             <Typography variant="body600">{product.name}</Typography>
             <div className={classes.volumeSelection}>
-                {product.prices.map((priceItem, index) => (
+                {product.prices && product?.prices.map((priceItem, index) => (
                     <span
                         key={index}
                         className={`${classes.volumeSpan} ${selectedVolume === priceItem.volume ? classes.selected : ''}`}

@@ -38,12 +38,16 @@ export const NewsCards = () => {
         setTotalPages(newsPage.total_pages);
     }, [newsPage, searchParams]);
 
+    if (!news.length) {
+        return null;
+    }
+
     return (
         <MultiContainer>
             <Breadcrumbs currentPage={t("header.news")}/>
             <Typography className={classes.newsTitle} variant="h3">{t("header.news")}</Typography>
             <div className={classes.news}>
-                {news.map((item, index) => (
+                {news?.map((item, index) => (
                     <div
                         className={classes.newsCard}
                         key={index}
